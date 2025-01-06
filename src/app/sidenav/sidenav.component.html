@@ -1,0 +1,35 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
+    <div class="logo-container">
+        <button class="logo"(click)="toggleCollapse()">BT</button>
+        <div class="logo-text"  *ngIf="collapsed">Budget Tracker</div>
+        <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a href="" class="sidenav-nav-link" [routerLink]="[data.RouterLink]"
+                routerLinkActive="active"   
+                [routerLinkActiveOptions]="{exact:true}"
+            >
+                <i class="sidenav-link-icon"[class]="data.icon"></i>
+                <span class="sidenav-link-text"  *ngIf="collapsed">{{data.label}}</span>
+            </a>
+            
+        </li>
+        <div class="signout">
+        <li class="sidenav-nav-item">
+            <a href="" class="sidenav-nav-link"[routerLink]="['login']"   routerLinkActive="active"   
+            [routerLinkActiveOptions]="{exact:true}"
+        >
+           
+              <i class="pi pi-sign-out sidenav-link-icon"></i>
+              <span class="sidenav-link-text"  *ngIf="collapsed">Logout</span>
+            </a>
+
+          </li>
+        </div>
+    </ul>
+
+    <img src="budget (2).png" alt="">
+</div>

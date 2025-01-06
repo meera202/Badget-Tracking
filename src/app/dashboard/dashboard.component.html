@@ -1,0 +1,57 @@
+<h1>Dashboard</h1>
+
+  <div class="card">
+    <div class="card-head">
+      <h3>Your Saving Goals</h3>
+    </div>
+    <div class="card-body">
+      <p-dataView #dv [value]="goals">
+        <ng-template pTemplate="list" let-products>
+          <div class="grid grid-nogutter">
+            <div class="col-12" *ngFor="let item of products; let first = first" class="col-12">
+              <div class="flex flex-column sm:flex-row sm:align-items-center p-4 gap-3"
+                [ngClass]="{ 'border-top-1 surface-border': !first }">
+                <div class="flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-4">
+                  <div class="flex flex-row md:flex-column justify-content-between align-items-start gap-2">
+                    <div>
+                      <div class="text-lg font-medium text-900 mt-2">{{ item.name }}</div>
+                    </div>
+                  </div>
+                  <div class="flex flex-column md:align-items-end gap-5">
+                    <span class="text-xl font-semibold" style="color: #E49B0F">{{ '$' + item.targetAmount }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </p-dataView>
+    </div>
+  </div>
+  <div class="card-container">
+
+
+  <div class="card">
+    <div class="card-head flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-4">
+      Your Total Income:
+      <span class="text-xl font-semibold md:align-items-end" style="color: rgb(13, 202, 13)">${{ getTotalIncome() }}</span>
+    </div>
+    <div class="chart">
+      <div class="card-body">
+        <p-chart type="doughnut" [data]="chartData"></p-chart>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-4">
+      Your Total Expenses:
+      <span class="text-xl font-semibold  md:align-items-end" style="color: #ff0033">${{ getTotalExpenses() }}</span>
+    </div>
+    <div class="chart">
+      <div class="card-body">
+        <p-chart type="doughnut" [data]="expenseChartData"></p-chart>
+      </div>
+    </div>
+  </div>
+</div>

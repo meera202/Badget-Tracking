@@ -1,0 +1,43 @@
+/* expenses.component.scss */
+
+.custom-dialog {
+    /* Customizing the dialog's width and height */
+    width: 600px;
+    height: 400px;
+  
+    /* Customizing the dialog's border radius and box shadow */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    /* Add padding to the dialog content */
+    .ui-dialog-content {
+      padding: 20px; /* Adjust as needed */
+    }
+  
+    /* Add margin to dialog content items */
+    .dialog-item {
+      margin-bottom: 10px; 
+      size: 45px;/* Adjust as needed */
+    }
+  
+    /* Customizing the dialog's header background and text color */
+    .ui-dialog-titlebar {
+      background-color: #4caf50; /* Green */
+      color: #fff; /* White */
+    }
+  
+    /* Customizing the dialog's footer area */
+    
+  }
+  .charts{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 700px;
+   
+}
+.input{
+    height: 50px;
+    }
+  

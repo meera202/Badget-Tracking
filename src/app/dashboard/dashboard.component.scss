@@ -1,0 +1,29 @@
+
+.chart{
+  align-self: center;
+  width: 900;
+    .card-body{
+
+        width:600px;
+        height: 600px;
+        size: 300px;
+    }
+}
+.card{
+  .card{
+    size: 10px;
+  }
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+  .card {
+    width: 100%; /* Adjust the width as needed */
+    margin-right: 20px; /* Add some margin between cards */
+  }
+  .card:last-child {
+    margin-right: 0; /* Remove margin from the last card */
+  }
+}
+
+
